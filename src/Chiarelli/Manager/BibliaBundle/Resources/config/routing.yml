@@ -1,0 +1,11 @@
+chiarelli_manager_biblia_homepage:
+    path:     /
+    defaults: { _controller: ChiarelliManagerBibliaBundle:Default:index }
+    
+api:
+    resource: "@ChiarelliManagerBibliaBundle/Resources/config/routing-api.yml"
+    prefix:   /biblie-api
+    
+popular:
+    resource: "@ChiarelliManagerBibliaBundle/Resources/config/routing-popular.yml"
+    prefix:   /popular

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Chiarelli\Manager\BibliaBundle\Entity\Biblia" table="biblia">
+    <id name="sigla" type="string" column="SIGLA" length="8" >
+    </id>
+    <field name="descricao" type="string" column="descricao" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="langCode" type="string" column="lang_code" length="6" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <one-to-many field="livros" target-entity="Livro" mapped-by="biblia">
+        <cascade>
+            <cascade-persist/>
+        </cascade>
+    </one-to-many>
+  </entity>
+</doctrine-mapping>

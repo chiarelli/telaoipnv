@@ -1,0 +1,4 @@
+services:
+#    chiarelli_manager_biblia.example:
+#        class: Chiarelli\Manager\BibliaBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

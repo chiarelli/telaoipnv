@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Chiarelli\Manager\BibliaBundle\Entity\Livro" table="livro">
+    <indexes>
+      <index name="FULLTEXT" columns="biblia_SIGLA"/>
+    </indexes>
+    <id name="id" type="integer" column="ID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="number" type="integer" column="number" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="code" type="string" length="8" column="code" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="name" type="string" column="name" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="testmentEnumIndex" column="testment_enum_index" type="integer" column-definition="TINYINT(11) NOT NULL"/>
+    <many-to-one field="biblia" target-entity="Biblia" nullable="false" fetch="LAZY">
+      <join-columns>
+        <join-column name="biblia_SIGLA" referenced-column-name="SIGLA"/>
+      </join-columns>
+    </many-to-one>
+    <one-to-many field="capitulos" target-entity="Capitulo" mapped-by="livro">
+        <cascade>
+            <cascade-persist/>
+        </cascade>
+    </one-to-many>
+  </entity>
+</doctrine-mapping>

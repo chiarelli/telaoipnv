@@ -1,0 +1,15 @@
+.gritter {
+    background: #66afe9;
+}
+
+.gritter-success {
+    background: royalblue;
+}
+
+.gritter-error {
+    background: #D44950;
+}
+
+.gritter-warning {
+    background: darkorange;
+}

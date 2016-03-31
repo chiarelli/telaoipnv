@@ -1,0 +1,4 @@
+
+chiarelli_manager_biblia_api:
+    resource: "@ChiarelliManagerBibliaBundle/Controller/APIController.php"
+    type:     annotation

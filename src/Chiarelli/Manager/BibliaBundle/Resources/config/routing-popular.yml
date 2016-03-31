@@ -1,0 +1,4 @@
+
+popular_biblia:
+    resource: "@ChiarelliManagerBibliaBundle/Controller/PopularController.php"
+    type:     annotation
